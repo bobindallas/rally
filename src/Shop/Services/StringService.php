@@ -19,10 +19,31 @@ class StringService
      *
      *
      * @param string $s
+     * @param string $bs
      * @return string
      */
-    public static function erase(string $s): string
+    public static function erase(string $s, $bs = '%'): string
     {
-        // TODO: fill in method and write Unit Tests!
-    }
-}
+      // split string to chars
+      $tmp = str_split($s);
+      $res = []; // the resulting string
+
+      foreach($tmp as $ltr) {
+
+         // if we have a backspace remove the previous char (if any) and move to the next element
+         if ($ltr === $bs) {
+            array_pop($res); // does nothing if the array is empty
+            continue;
+
+         // otherwise add char to list and keep going
+         } else {
+            $res[] = $ltr;
+         }   
+      }   
+
+      // return the stringified result
+      return implode('', $res);
+
+    } // function erase
+
+} // class StringService

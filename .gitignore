@@ -2,4 +2,5 @@
 .vscode
 .DS_Store
 .phpunit.result.cache
+tags
 /vendor

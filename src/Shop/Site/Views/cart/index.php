@@ -1,3 +1,10 @@
+/*
+ * some raw php templating here
+ * we'll assume this is wrapped in a master layout 
+ * pulling in an item template fragment for each item in the cart
+ * displaying the cart sub-total below
+ */
+   
 <div class="row">
     <div class="col-md-6 items">
             <?php foreach($cart->items as $item): ?>

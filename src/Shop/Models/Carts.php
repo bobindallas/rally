@@ -9,12 +9,16 @@ class Carts
     /**
      * @param Products $product
      * @param $quantity
+     * @param $price
      * @return $this
+	  *
+	  * Added a price param for testing
      */
-    public function addItem(Products $product, $quantity)
+    public function addItem(Products $product, $quantity, int $price = 0)
     {
         $cartItem = new CartItems();
         $cartItem->product = $product;
+        $cartItem->product->price = $price;
         $cartItem->quantity = $quantity;
 
         if ($cartItem->quantity > 0) {
